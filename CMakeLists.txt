@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.10)
+project(CMAKE-TUT2 VERSION 1.0)
+set(CMAKE_CXX_STANDARD 11)
+set(Boost_USE_STATIC_LIBS ON)   # AA: NOTE: if Boost_USE_STATIC_LIBS is set to OFF, find_package will not be able to find libraries
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_RUNTIME OFF)
+find_package(Boost REQUIRED COMPONENTS filesystem)
+add_subdirectory(lib)
+add_subdirectory(proj)
+add_subdirectory(tests)
